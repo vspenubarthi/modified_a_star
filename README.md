@@ -23,3 +23,7 @@ The **third vehicle** will do the same, but take the first two into account inst
 I also added a **time constraint** variable to take into to account when the person has to reach a destination by a certain time (as minimizing congestion might increase travel time significantly).
 
 Please visit the webpage to see a demonstration of the algorithm.
+
+Link to Webpage: https://vspenubarthi.github.io/modified_a_star/
+
+Instructions on how to interact with the algorithm can be found there.
