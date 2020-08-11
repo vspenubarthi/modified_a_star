@@ -5,7 +5,65 @@
 		<meta charset="UTF-8">
 		<title>Vishnu's A* Project</title>
 		<link rel="icon" href="images/favicon.ico" type="image/ico" sizes="16x16">
-		
+        
+        <style>
+            body {
+              font-family: 'Lato', sans-serif;
+            }
+            
+            .overlay {
+              height: 100%;
+              width: 0;
+              position: fixed;
+              z-index: 1;
+              top: 0;
+              left: 0;
+              background-color: rgb(0,0,0);
+              background-color: rgba(0,0,0, 0.9);
+              overflow-x: hidden;
+              transition: 0.5s;
+              color: white;
+              font-size: large;
+              word-wrap: break-word;
+            }
+            
+            .overlay-content {
+              position: relative;
+              top: 25%;
+              width: 100%;
+              text-align: left;
+              margin-top: 10px;
+            }
+            
+            .overlay a {
+              /* padding: 8px; */
+              text-decoration: none;
+              font-size: large;
+              color: blue;
+              /* display: block; */
+              transition: 0.3s;
+            }
+            
+            .overlay a:hover, .overlay a:focus {
+              color: #f1f1f1;
+            }
+            
+            .overlay .closebtn {
+              position: absolute;
+              top: 20px;
+              right: 45px;
+              font-size: 60px;
+            }
+            
+            @media screen and (max-height: 450px) {
+              .overlay a {font-size: 20px}
+              .overlay .closebtn {
+              font-size: 40px;
+              top: 15px;
+              right: 35px;
+              }
+            }
+            </style>
 	</head>
 	<body id="cs" onload="init()">
 			
@@ -23,7 +81,31 @@
 	<input id="dotTiebreaker" type="checkbox" onclick="draw()">Dot product tie breaker<br><br>-->
 	<div id="specialA*">
     <h2>A* Path-Finding Program</h2>
-    <h4>Instructions on Use Below</h4>
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <h2>A* Project Overview</h2>
+            <p> Here is my A* Project. This page will specifically describe how to interact with the <i>49x49 square grid</i>. For information about the inspiration for the project, please visit the <a href="https://github.com/vspenubarthi/modified_a_star">GitHub Page</a>. This page describes the ideology and thought behind this project. <br><br>
+            
+                There are several ways to interact with this demo. First, if you cannot see the <i>grid</i> well, feel free to zoom in.
+                Below is a list of different things you can do to interact with the demo above:<br>
+                <ul>
+                    <li>If you <i>drag your mouse on the grid</i> you will see black blocks appear; these are <b>obstacles</b>. These are like <i>buildings</i> in the real world. The <i>white blocks</i> are <b>open roads</b> that the <i>car</i> can travel on.</li>
+                    <li>If you <i>drag your mouse</i> or <i>click</i> on an <b>obstacle</b>, it will disappear. </li>
+                    <li>You can set the (x,y) coordinates for the <i>start</i> and <i>end</i> blocks of each pair in the boxes (make sure values <= 49), with the coordinates being calculated as distance from the <b>top-left</b> corner.</li>
+                    <li>You can also set the <b>max travel time</b> (in unit squares) for each start/end pair as well; please refer to the link about to find out why this is here.</li>
+                    <li>Once you set these, you can hit the <b>Calculate Distance</b> button to calculate the distance between the points and update the <i>grid</i>. The distance will also be written below in unit squares.</li>
+                    <li>Finally, you can clear all obstacles with the <b>Clear</b> button and view random placements with the <b>Random</b> button as well.</li>
+                </ul>
+                     
+            
+            Once again, feel free to refer to the GitHub Page linked above or contact me for further explanation. </p>
+        </div>
+      </div>
+      <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Click Here for Instructions on How to Use</span>
+
+    </div>
+    <br><br>
 	</div>
 	Coordinates for Red/Blue Set <input id="startx" type="text" name="startx" value="10"> , <input id="starty" type="text" name="starty" value="10"> <br />
 	<input id="endx" type="text" name="endx" value="13"> , <input type="text" id="endy" name="endy" value="15"> <br/>
@@ -43,26 +125,18 @@
 	
 </div>
 </div>
-<br><br><br><br><br><br>
-<h2>A* Project Overview</h2>
-<p> Here is my A* Project. This page will specifically describe how to interact with the <i>49x49 square grid</i>. For information about the inspiration for the project, please visit the <a href="https://github.com/vspenubarthi/modified_a_star">GitHub Page</a>, which describes the ideology behind this. <br><br>
-
-    There are several ways to interact with this demo. First, if you cannot see the <i>grid</i> well, feel free to zoom in.
-    Below is a list of different things you can do to interact with the demo above:<br>
-    <ul>
-        <li>If you <i>drag your mouse on the grid</i> you will see black blocks appear; these are <b>obstacles</b>. These are like <i>buildings</i> in the real world. The <i>white blocks</i> are <b>open roads</b> that the <i>car</i> can travel on.</li>
-        <li>If you <i>drag your mouse</i> or <i>click</i> on an <b>obstacle</b>, it will disappear. </li>
-        <li>You can set the (x,y) coordinates for the <i>start</i> and <i>end</i> blocks of each pair in the boxes (make sure values <= 49), with the coordinates being calculated as distance from the <b>top-left</b> corner.</li>
-        <li>You can also set the <b>max travel time</b> (in unit squares) for each start/end pair as well; please refer to the link about to find out why this is here.</li>
-        <li>Once you set these, you can hit the <b>Calculate Distance</b> button to calculate the distance between the points and update the <i>grid</i>. The distance will also be written below in unit squares.</li>
-        <li>Finally, you can clear all obstacles with the <b>Clear</b> button and view random placements with the <b>Random</b> button as well.</li>
-    </ul>
-         
-
-Once again, feel free to refer to the GitHub Page linked above or contact me for further explanation. </p>
-			</div>
+</div>
+</div>
 <script language="JavaScript" type="text/JavaScript" src="Map.js"></script>
-
+<script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+</script>
 
 <script>
 var map, canvas, ctx, allowDiagonals, nodesSearched;
