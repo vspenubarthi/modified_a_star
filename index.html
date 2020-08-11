@@ -12,11 +12,9 @@
 	<body id="cs" onload="init()">
 			
 			<div id="stuff">
-			<h1>Independent Project</h1>
+			<h1>A* Path-Finding Project by Vishnu S. Penubarthi</h1>
 			<div class ="borderforborder">
-			<div id="csinf">
-			<p> Here is my Independent Project. To use it, you can drag the red and blue blocks around to see their path length change. You can also add blocks by clicking and holding a few blocks below where you want to add the blocks and dragging the mouse. You should see the paths and path lengths change. If you surround a colored block with black blocks, then the path should disappear, as there is no way for that block to be reached.</p>
-			</div>
+            
 			</div>
 			<div id="canv">
 			<canvas id="canvas" style="float:left;	margin-right:10px" width=500 height=500></canvas>
@@ -26,10 +24,9 @@
 	<input id="badSorting" type="checkbox" onclick="draw()" checked="yes">Prefer new nodes<br>
 	<input id="dotTiebreaker" type="checkbox" onclick="draw()">Dot product tie breaker<br><br>-->
 	<div id="specialA*">
-	<h2>A* Path-Finding Program</h2>
+    <h2>A* Path-Finding Program</h2>
+    <h4>Instructions on Use Below</h4>
 	</div>
-
-	<h2>Hi There! Enter in Coordinates to see the A* Program Work!</h2>
 	Coordinates for Red/Blue Set <input id="startx" type="text" name="startx" value="10"> , <input id="starty" type="text" name="starty" value="10"> <br />
 	<input id="endx" type="text" name="endx" value="13"> , <input type="text" id="endy" name="endy" value="15"> <br/>
 	Max Time for Red/Blue Set: <input id="timebr" type="text" name="timebr" value="50"><br/><br/><br/>
@@ -40,7 +37,7 @@
 	
 	<input type="button" onclick="clearMap()" value="Clear"><input type="button" onclick="randomMap()" value="Random"><br><br>
 	<table style="font-family:'Lucida Grande', Verdana, Arial, Sans-Serif;font-size:12px"><tr><td>
-	Path length (red/blue):</td><td><span id="pathlengthrb"></span></td></tr>
+	Path length (Red/Blue):</td><td><span id="pathlengthrb"></span></td></tr>
 	
 	<tr><td>Path length (Green/Purple): </td><td><span id="pathlengthgo"></span></td></tr>
 
@@ -48,6 +45,23 @@
 	
 </div>
 </div>
+<br><br><br><br><br><br>
+<h2>A* Project Overview</h2>
+<p> Here is my A* Project. This page will specifically describe how to interact with the <i>49x49 square grid</i>. For information about the inspiration for the project, please visit the <a href="https://github.com/vspenubarthi/modified_a_star">GitHub Page</a>, which describes the ideology behind this. <br><br>
+
+    There are several ways to interact with this demo. First, if you cannot see the <i>grid</i> well, feel free to zoom in.
+    Below is a list of different things you can do to interact with the demo above:<br>
+    <ul>
+        <li>If you <i>drag your mouse on the grid</i> you will see black blocks appear; these are <b>obstacles</b>. These are like <i>buildings</i> in the real world. The <i>white blocks</i> are <b>open roads</b> that the <i>car</i> can travel on.</li>
+        <li>If you <i>drag your mouse</i> or <i>click</i> on an <b>obstacle</b>, it will disappear. </li>
+        <li>You can set the (x,y) coordinates for the <i>start</i> and <i>end</i> blocks of each pair in the boxes (make sure values <= 49), with the coordinates being calculated as distance from the <b>top-left</b> corner.</li>
+        <li>You can also set the <b>max travel time</b> (in unit squares) for each start/end pair as well; please refer to the link about to find out why this is here.</li>
+        <li>Once you set these, you can hit the <b>Calculate Distance</b> button to calculate the distance between the points and update the <i>grid</i>. The distance will also be written below in unit squares.</li>
+        <li>Finally, you can clear all obstacles with the <b>Clear</b> button and view random placements with the <b>Random</b> button as well.</li>
+    </ul>
+         
+
+Once again, feel free to refer to the GitHub Page linked above or contact me for further explanation. </p>
 			</div>
 <script language="JavaScript" type="text/JavaScript" src="Map.js"></script>
 

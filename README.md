@@ -1,6 +1,6 @@
 # modified_a_star
 
-Many people are aware of the A* algorithm, which is a path-finding algorithm that takes a heuristic approach to finding a path from *Point A* to *Point B*.
+Many people are aware of the A* algorithm, which is a path-finding algorithm that takes a heuristic approach to finding a path from *Point A* to *Point B*. If you are not familiar, here is an **amazing** [reference](http://theory.stanford.edu/~amitp/GameProgramming/) to learn all about it.
 
 ## Basic A* Overview
 As a basic overview, A* determines the best path to go from *Point A* to *Point B* through calculating the distance from the *start* and distance from the *destination*. 
@@ -26,4 +26,4 @@ Please visit the webpage to see a demonstration of the algorithm.
 
 Link to Webpage: https://vspenubarthi.github.io/modified_a_star/
 
-Instructions on how to interact with the algorithm can be found there.
+Instructions on how to interact with the algorithm as well as this information mentioned above can be found there.
